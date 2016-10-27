@@ -1,0 +1,18 @@
+{% extends 'pages/basewhite.html' %}
+
+{% block content %}
+<div class="">
+  <img src="{{ post.image.url }}" alt="photo" />
+  <p>
+    <h1>{{ post.title }}</h1>
+  </p>
+
+  <p>
+    {{ post.date }}
+  </p>
+
+  <p>
+    {{ post.article|safe }}
+  </p>
+</div>
+{% endblock %}

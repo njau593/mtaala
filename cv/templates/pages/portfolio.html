@@ -1,0 +1,18 @@
+{% extends 'pages/basewhite.html' %}
+
+{% block content %}
+{% for p in projects %}
+<div class="">
+  <img src="{{ p.image.url }}" alt="photo" />
+  <p>
+    <h1><a href="{% url 'project_detail' pk=p.pk %}">{{ p.title }}</a></h1>
+  </p>
+  <p>
+    {{ p.extract|safe }}
+  </p>
+  <p>
+    {{ p.date }}
+  </p>
+</div>
+{% endfor %}
+{% endblock %}

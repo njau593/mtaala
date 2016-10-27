@@ -1,0 +1,10 @@
+{% extends 'pages/basebrown.html' %}
+
+{% block content %}
+{% for a in about %}
+<img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
+<p>
+  {{ a.description|safe }}
+</p>
+{% endfor %}
+{% endblock %}

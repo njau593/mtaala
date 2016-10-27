@@ -1,0 +1,20 @@
+{% extends 'pages/basewhite.html' %}
+
+{% block content %}
+{% for a in about %}
+<img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
+<p>
+  {{ a.description|safe }}
+</p>
+
+<div class="">
+  <p>
+    {{ a.resume|safe }}
+  </p>
+
+  <p>
+    <a href="{{ a.cv.url }}">Print Curriclum Vitae</a>
+  </p>
+</div>
+{% endfor %}
+{% endblock %}
