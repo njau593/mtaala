@@ -1,16 +1,91 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+      <!-- Local imports -->
+      <link rel="stylesheet" href="{% static 'css/basewhite.css' %}" />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <meta charset="UTF-8">
+      <title>The Njau</title>
     </head>
     <body>
-        <header></header>
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-        <footer></footer>
+
+      <header>
+        <nav class="light-green accent-3">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+            <a href="#" data-activates="slide-out" class="button-collapse">
+              <i class="material-icons mdi-navigation-menu">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li class="icolour"><a href="{% url 'home' %}"><i class="material-icons icolour">home</i>Introduction</a></li>
+              <li class="icolour"><a href="{% url 'about_me' %}"><i class="material-icons icolour">person</i>Profile</a></li>
+              <li class="icolour"><a href="{% url 'my_portfolio' %}"><i class="material-icons icolour">folder</i>Projects</a></li>
+              <li class="icolour"><a href="{% url 'contact_me' %}"><i class="material-icons icolour">chat</i>Contact me</a></li>
+            </ul>
+            <ul class="side-nav" id="slide-out">
+              <li class="icolour"><a href="{% url 'home' %}"><i class="material-icons icolour">home</i></a>Home</li>
+              <li class="icolour"><a href="{% url 'about_me' %}"><i class="material-icons icolour">person</i>Profile</a></li>
+              <li class="icolour"><a href="{% url 'my_portfolio' %}"><i class="material-icons icolour">folder</i>Projects</a></li>
+              <li class="icolour"><a href="{% url 'contact_me' %}"><i class="material-icons icolour">chat</i>Contact me</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Script to slide navbar on mobile -->
+        <script>
+          $(document).ready(function(){
+          $('.button-collapse').sideNav({
+              menuWidth: 300, // Default is 240
+              edge: 'left', // Choose the horizontal origin
+              closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            });
+          $('.collapsible').collapsible({
+          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+          });
+          $('#aside').pushpin({ top:110, bottom:500 });
+          });
+    	  </script>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+          $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+          });
+          $('select').material_select();
+          });
+        </script>
+      </header>
+
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+
+      <footer class="page-footer black-text" style="background-color:#76ff03;">
+        <div class="container">
+         <div class="row">
+         </div>
+        </div>
+
+       <div class="footer-copyright">
+         <div class="container black-text">
+           ©2016 Godfrey Njau Kariuki
+         </div>
+       </div>
+      </footer>
+
     </body>
 </html>

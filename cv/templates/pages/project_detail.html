@@ -1,18 +1,25 @@
 {% extends 'pages/basewhite.html' %}
+{% load staticfiles %}
+
 
 {% block content %}
-<div class="">
-  <img src="{{ post.image.url }}" alt="photo" />
-  <p>
-    <h1>{{ post.title }}</h1>
-  </p>
+<link rel="stylesheet" href="{% static 'css/pages.css' %}" />
 
-  <p>
-    {{ post.date }}
-  </p>
+<div class="container">
+  <div class="content">
+    <img class="responsive-img materialboxed" src="{{ post.image.url }}" alt="photo" />
+    <p>
+      <h1>{{ post.title }}</h1>
+    </p>
 
-  <p>
-    {{ post.article|safe }}
-  </p>
+    <p class="date">
+      {{ post.date }}
+    </p>
+
+    <p>
+      {{ post.article|safe }}
+    </p>
+  </div>
 </div>
+
 {% endblock %}

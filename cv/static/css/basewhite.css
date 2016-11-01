@@ -1,0 +1,18 @@
+nav{
+  height: 130px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+/*for icons*/
+.icolour{
+  color: #e65100;
+}

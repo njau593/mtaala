@@ -1,18 +1,36 @@
 {% extends 'pages/basewhite.html' %}
+{% load staticfiles %}
+
 
 {% block content %}
-{% for p in projects %}
-<div class="">
-  <img src="{{ p.image.url }}" alt="photo" />
-  <p>
-    <h1><a href="{% url 'project_detail' pk=p.pk %}">{{ p.title }}</a></h1>
-  </p>
-  <p>
-    {{ p.extract|safe }}
-  </p>
-  <p>
-    {{ p.date }}
-  </p>
+<link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+
+<div class="container">
+  <div class="col s12 m6 l8 pull-s5">
+    {% for p in projects %}
+      <div class="row this-project left">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ p.image.url }}" alt="photo" />
+            <span class="card-title">
+              <a href="{% url 'project_detail' pk=p.pk %}">{{ p.title }}</a>
+            </span>
+          </div>
+          <div class="card-content">
+            <p>
+              {{ p.extract|safe }}
+            </p>
+            <p>
+              {{ p.date }}
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="{% url 'project_detail' pk=p.pk %}">Read more...</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% endfor %}
+
 {% endblock %}

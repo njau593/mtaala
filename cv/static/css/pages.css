@@ -1,0 +1,49 @@
+/* css for home page*/
+.this-image{
+  height: 100%;
+}
+
+.this-home{
+  margin-top: 50px;
+}
+
+/* css for about page*/
+.resume{
+  text-align: justify;
+}
+
+.resume a{
+  color: #e65100;
+}
+
+/*css for projects page*/
+.row.this-project.left {
+  float: left;
+}
+
+.this-project{
+  max-width: 350px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.this-project a{
+  color: #e65100;
+}
+
+/*css for project detail page*/
+.content{
+  text-align: justify;
+  margin-top: 50px;
+}
+
+.content .date, .content h1{
+  color: #e65100;
+}
+
+a{
+  color: #000000;
+}

@@ -1,11 +1,24 @@
 {% extends 'pages/basewhite.html' %}
+{% load staticfiles %}
+
 
 {% block content %}
-{% for r in reach %}
-<div class="">
-  <p>
-    {{ r.reach|safe }}
-  </p>
+<link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+
+<div class="container">
+  <div class="row">
+    {% for r in reach %}
+      <div class="col s12 l4">
+        <div class="card-panel orange darken-4">
+          <span class="white-text">
+            <p>
+              {{ r.reach|safe }}
+            </p>
+          </span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% endfor %}
+
 {% endblock %}

@@ -1,20 +1,48 @@
 {% extends 'pages/basewhite.html' %}
+{% load staticfiles %}
+
 
 {% block content %}
-{% for a in about %}
-<img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
-<p>
-  {{ a.description|safe }}
-</p>
+<link rel="stylesheet" href="{% static 'css/pages.css' %}" />
 
-<div class="">
-  <p>
-    {{ a.resume|safe }}
-  </p>
+<div class="container">
+  {% for a in about %}
+  <div class="col s12 m7">
+      <div class="card horizontal">
+        <div class="card-image this-image">
+          <img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>
+              {{ a.description|safe }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 
-  <p>
-    <a href="{{ a.cv.url }}">Print Curriclum Vitae</a>
-  </p>
+  {% for b in about %}
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel white">
+          <span class="grey-text text-darken-3">
+            <div class="resume">
+              <p>
+                {{ b.resume|safe }}
+              </p>
+
+              <p>
+                <a href="{{ b.cv.url }}">Print Curriclum Vitae</a>
+              </p>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
 </div>
-{% endfor %}
+
 {% endblock %}

@@ -1,10 +1,31 @@
-{% extends 'pages/basebrown.html' %}
+{% extends 'pages/basewhite.html' %}
+{% load staticfiles %}
 
 {% block content %}
-{% for a in about %}
-<img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
-<p>
-  {{ a.description|safe }}
-</p>
-{% endfor %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+
+<div class="this-home">
+  <div class="container">
+    {% for a in about %}
+    <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-image this-image">
+            <img src="{{ a.profile_Pic.url }}" alt="Profile Picture" />
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>
+                {{ a.description|safe }}
+              </p>
+            </div>
+            <div class="card-action orange darken-4">
+              <a href="{% url 'about_me' %}">Read more...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
 {% endblock %}
