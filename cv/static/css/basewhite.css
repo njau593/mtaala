@@ -6,6 +6,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   main {
@@ -15,4 +16,9 @@ body {
 /*for icons*/
 .icolour{
   color: #e65100;
+}
+
+.logo img{
+  max-height: 100px;
+  max-width: 100px;
 }
