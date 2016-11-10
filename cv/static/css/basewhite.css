@@ -1,12 +1,9 @@
-nav{
-  height: 130px;
-}
-
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Cormorant Garamond', serif;
+    background-color: grey;
   }
 
   main {
@@ -19,6 +16,6 @@ body {
 }
 
 .logo img{
-  max-height: 100px;
+  max-height: 64px;
   max-width: 100px;
 }
